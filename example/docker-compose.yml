@@ -1,0 +1,33 @@
+version: '2.1'
+
+services:
+  crawler-service:
+    image: ftvdexcz/crawler-service-v2
+    container_name: crawler-service-v2
+    build: .
+    env_file:
+      - crawler-service.env
+    ports:
+      - 3000:3000
+    restart: always
+    
+
+  notification-service:
+    image: ftvdexcz/notification-service-v2
+    container_name: notification-service-v2
+    build: .
+    env_file:
+      - notification-service.env
+    ports:
+      - 9000:9000
+    restart: always
+
+  imdb-crawler-worker:
+    image: ftvdexcz/imdb-crawler-worker-v2
+    container_name: imdb-crawler-worker-v2
+    env_file:
+      - imdb-worker.env
+    build: .
+    volumes:
+      - C:\Users\Longdq\Desktop\output:/usr/test_output
+    restart: always

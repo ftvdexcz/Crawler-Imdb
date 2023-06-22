@@ -1,0 +1,24 @@
+{
+  "name": "team-project-n2_5",
+  "version": "1.0.0",
+  "description": "[Link bài thuyết trình](https://www.canva.com/design/DAFeM65W21A/zTCVZ8Cl-McJxzvrmyOegA/edit?utm_content=DAFeM65W21A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton&fbclid=IwAR0UKGRNCrCdxb5xBzDyEGBU7T6PQ2mmaKmLfBfeBeHi6-tTanPamxgcZdA)\r ## Chủ đề bài tập lớn : Một ứng dụng giúp crawl dữ liệu từ web và lưu trữ nó trong cơ sở dữ liệu\r Khi có sự thay đổi từ một trang web thì hệ thống sẽ lưu trữ hoặc ~~thông báo cho người dungf~~ về sự thay đổi đấy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.6",
+    "body-parser": "^1.20.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.3.0",
+    "mongoose": "^7.0.4",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "openai": "^3.2.1"
+  }
+}

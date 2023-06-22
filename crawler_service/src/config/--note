@@ -1,0 +1,13 @@
+WINDOW: "set PORT=9999 && npm run start"
+
+
+docker build --no-cache -t ftvdexcz/crawler-service .
+
+-- RUN CRAWLER SERVICE
+docker run -d --env-file E:\Long\workspace\crawler-soa\team-project-n2_5\crawler_service\src\config\.env -e PORT=3000 --name crawler-service -p 3000:3000 ftvdexcz/crawler-service
+
+-- RUN CRAWLER WORKER
+docker run -d --env-file E:\Long\workspace\crawler-soa\team-project-n2_5\workers\imdb\src\config\.env --name imdb-worker1 -v C:\Users\Longdq\Desktop\output:/usr/test_output ftvdexcz/imdb-crawler-worker
+
+-- RUN NOTI SERVICE
+docker run -d --env-file E:\Long\workspace\crawler-soa\team-project-n2_5\notification_service\src\config\.env -e PORT=9000 -p 9000:9000 --name notification_service ftvdexcz/notification-service

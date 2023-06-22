@@ -1,0 +1,83 @@
+url = 'https://imdb.com/search/title/?';
+
+- QUERY: 
+
++ title = 'string';
+
++ title_type = {
+  feature,
+  tv_movie,
+  tv_series,
+  tv_episode,
+  tv_special,
+  tv_miniseries,
+  documentary,
+  video_game,
+  short,
+  video,
+  tv_short,
+  podcast_series,
+  podcast_episode,
+  music_video
+}
+(title_type=feature,tv_movie,tv_series,tv_episode,tv_special,tv_miniseries,documentary,video_game,short,video,tv_short,podcast_series,podcast_episode,music_video)
+
++ release_date=2001-01-01,2023-12-31 (YYYY-MM-DD, YYYY-MM, YYYY)
+
++ user_rating=1.0,9.9 (min, max). Nếu không có min hoặc max: user_rating=,9.5
+
++ genres = {
+  action,
+  adventure,
+  animation,
+  biography,
+  comedy,
+  crime,
+  documentary,
+  drama,
+  family,
+  fantasy,
+  film-noir,
+  game-show,
+  history,
+  horror,
+  music,
+  musical,
+  mystery,
+  news,
+  reality-tv,
+  romance,
+  sci-fi,
+  sport,
+  talk-show,
+  thriller,
+  war,
+  western
+}
+
+
++ groups: {
+  top_100,
+  top_250,
+  top_1000,
+  bottom_100,
+  bottom_250,
+  bottom_1000
+}
+
++ count = 100 (50, 100, 250)
+
++ sort (
+  alpha,asc
+  alpha,desc
+  user_rating,asc
+  user_rating,desc
+  year,asc
+  year,desc
+  moviemeter,asc // độ phổ biến tăng dần (lớn nhất -> bé nhất)
+  moviemeter,desc // độ phổ biến giảm dần
+  num_votes,asc // số vote tăng dần 
+  num_votes,desc 
+) - mặc định không có sort thì là sort theo độ phổ biến tăng dần 
+
+https://www.imdb.com/search/title/?title_type=feature,tv_movie,tv_series,tv_episode,tv_special,tv_miniseries,documentary,video_game,short,video,tv_short,podcast_series,podcast_episode,music_video&release_date=2001-01-01,2023-12-31&user_rating=1.0,9.9&genres=action,adventure,animation,biography,comedy,crime,documentary,drama,family,fantasy,film-noir,game-show,history,horror,music,musical,mystery,news,reality-tv,romance,sci-fi,sport,talk-show,thriller,war,western&groups=top_100,top_250,top_1000,bottom_100,bottom_250,bottom_1000&sort=alpha,asc&count=100
